@@ -1,10 +1,10 @@
 import React from "react";
 import { useStateValue } from "../../context/StateProvider";
-import "./Product.css";
 import { useNavigate } from "react-router-dom";
+import "./Product.css";
 
 const Product = ({ id, title, price, image, rating }) => {
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
   const navigate = useNavigate();
 
   const addToCartHandler = () => {

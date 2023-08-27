@@ -61,17 +61,30 @@ const Login = () => {
           <button
             type="submit"
             onClick={signInHandler}
-            className="login__signIn_button"
+            className={`${
+              !email || !password
+                ? "button__notAllowed login__signIn_button"
+                : "login__signIn_button"
+            }`}
+            disabled={!email || !password}
           >
             Sign In
           </button>
         </form>
-        <p>
-          By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use &
-          Sale. Please see our Privacy Notice, our Cookies Notice and our
+        <p style={{ textAlign: "center" }}>
+          By signing-in you agree to the AMAZON CLONE Conditions of Use & Sale.
+          Please see our Privacy Notice, our Cookies Notice and our
           Interest-Based Ads Notice.
         </p>
-        <button onClick={registerHandler} className="login__register_button">
+        <button
+          className={`${
+            !email || !password
+              ? "button__notAllowed login__register_button"
+              : "login__register_button"
+          }`}
+          onClick={registerHandler}
+          disabled={!email || !password}
+        >
           Create your Amazon Account
         </button>
       </div>

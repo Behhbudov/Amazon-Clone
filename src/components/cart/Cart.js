@@ -1,8 +1,8 @@
 import React from "react";
-import "./Cart.css";
 import Subtotal from "../subtotal/Subtotal";
 import CartProduct from "../cartProduct/CartProduct";
 import { useStateValue } from "../../context/StateProvider";
+import "./Cart.css";
 
 const Cart = () => {
   const [{ cart, user }, dispatch] = useStateValue();

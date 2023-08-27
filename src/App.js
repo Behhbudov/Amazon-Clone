@@ -1,13 +1,14 @@
+import { useEffect } from "react";
 import RootLayout from "./components/rootLayout/RootLayout";
 import Home from "./components/home/Home";
 import Cart from "./components/cart/Cart";
 import Login from "./components/login/Login";
+import Payment from "./components/payment/Payment";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./App.css";
-import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import { useStateValue } from "./context/StateProvider";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/cart", element: <Cart /> },
       { path: "/login", element: <Login /> },
+      { path: "/payment", element: <Payment /> },
     ],
   },
 ]);
